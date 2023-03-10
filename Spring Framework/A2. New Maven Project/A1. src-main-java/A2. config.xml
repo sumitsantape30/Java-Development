@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p" xsi:schemaLocation="http://www.springframework.org/schema/beans
+ https://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/context/spring-context.xsd">
+
+	<!--yeh configuration file hai apni, isme student ko declar krna hai ab isliye bean tag use karenge-->
+	<bean class="springCore.javaDev.Student" name="student1">
+		<!--bean mai 2 chize deni hoti hai class and its unique name taki puri file mai use pehchan ske, fetch karna rha to bas nam se fetch kr skte ho-->
+
+		<!--hum yaha setter injection us kr rhe hai so apko btana padega apko kya values set krni hai with the help of setter injection-->
+		<property name="studentId">
+			<value>5483</value>
+		</property>
+		<!--property means apko kis property ki value set krni hai, means setter call hoga property us kiya to-->
+
+		<property name="studentName">
+			<value>Sumit Santape</value>
+		</property>
+
+		<property name="studentAddress">
+			<value>Nagpur</value>
+		</property>
+
+	</bean>
+	<!--so this is our bean-->
+
+</beans>
