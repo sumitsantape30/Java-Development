@@ -7,6 +7,8 @@
 
 <!--  Property injection using p Schema and using value as attribute -->
 
+    <!-- By using value as attribute -->
+
 	<bean class="springCore.javaDev.Student" name="student1">
 
         <!-- hum value as a attribute use kr rhe hai -->
@@ -28,5 +30,17 @@
 		<property name="studentAddress" value="Nagpur"/>
 
 	</bean>
+
+	
+	 <!-- Using P Schema: yeh use krne keliye upar p schema declare krna padega -->
+	 
+	 <bean class="springCore.javaDev.Student" name="student3" p:studentId="2374" p:studentName="Allen" p:studentAddress="Wardha" />
+	 <!--  jitni properties deni hai utni de skte ho -->
+	
+	 <bean class="springCore.javaDev.Student" name="student4" p:studentId="774" p:studentName="ShyamSingh" p:studentAddress="Nagpur" />
+	 
+	 
+	 <!--  so 3 tarike hai to property inject, 1) Value as a element 2)Value as a attribute 3)using P schema -->
+  	
 
 </beans>
