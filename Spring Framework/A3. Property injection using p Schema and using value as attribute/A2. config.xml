@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p" xsi:schemaLocation="http://www.springframework.org/schema/beans
+ https://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/context/spring-context.xsd">
+
+<!--  Property injection using p Schema and using value as attribute -->
+
+	<bean class="springCore.javaDev.Student" name="student1">
+
+        <!-- hum value as a attribute use kr rhe hai -->
+		<property name="studentId" value="5483" />
+		<!-- ap directly value as a attribute use karke value set kr skte ho aur iss tag mai kuch content nhi to aap self closing tag us kr skte ho, no need to use </property>.  -->
+
+		<property name="studentName" value="Sumit"/>
+		<property name="studentAddress" value="Nagpur"/>
+
+	</bean>
+	
+	
+	<!-- 2nd bean -->
+	<bean class="springCore.javaDev.Student" name="student2">
+
+		<property name="studentId" value="67584" />
+
+		<property name="studentName" value="Ankita "/>
+		<property name="studentAddress" value="Nagpur"/>
+
+	</bean>
+
+</beans>
