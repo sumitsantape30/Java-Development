@@ -20,3 +20,12 @@ public class App
         System.out.println(student1); //jaisehi reference print karega to woh toString method print karega yeh humne Student.java mai btaya hai
     }
 }
+
+/*
+Output:
+Hello World!
+Setting StudentId
+Setting StudentName
+Setting StudentAddress
+Student [studentId=5483, studentName=Sumit Santape, studentAddress=Nagpur]
+*/
