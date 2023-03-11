@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p" xsi:schemaLocation="http://www.springframework.org/schema/beans
+ https://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/context/spring-context.xsd">
+    
+
+	  	
+	  	<!-- Reference injection: A and B 2 classes hai so A B ka use karega apne andar. A B pe depend krha hoga means A B ka object use karega so B is dependency and A is a dependent object
+	  	A tabhi kam krskta hai jab use B ke reference milega so hum reference injection use karenge -->
+	  	
+	  	<!-- Now open A.java file-->
+	  	<!--  A depende krha hai B pe to mai pehle B ko declare karung config file mai -->
+	  	
+	  <bean name="bref" class="ref.B"> <!-- B wale file ka name bref dediya hai -->
+	  	
+	  	<property name="y" value="90" />
+	  
+	 </bean>
+	 
+	 <!--  ab A wala object banayenge jo depend krha hai B pe -->
+	 <bean name="aref" class="ref.A">
+	  	<property name="x" value="12"/>
+	  	<property name="obj">
+	  		<ref bean="bref"/> <!--iska matlab hai aap kis object ka reference is obj mai dal rhe ho--> 
+	  	</property>
+	  	
+	  	<!--   other way to write it, alag se ref tag lagane ke jaruratnhi. (p schema bhi use kr skte ho) -->
+	<!-- <property name="obj" ref="bref"/>  --> 
+	  	
+	  	
+	 </bean>
+	<!--  yeh kya karega jab A ka object banayega to x mai 12 dal dega aur A ke obj mai B ka refrence dal dega jiske andar y ki value 90 hai-->
+	 
+	
+</beans>
