@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p" xmlns:c="http://www.springframework.org/schema/c" xsi:schemaLocation="http://www.springframework.org/schema/beans
+ https://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/context/spring-context.xsd">
+    
+    <!--7. yeh badme dekhna yeh object keliye ek aur bean bana rhe hai taki reference de ske -->
+    <bean class="com.springcore.ci.Certificate" name="cer">
+    	<constructor-arg value="Android using Kotlin"/>
+    	<!-- jo object banega huma certi uske andar yeh value jayegi -->
+    </bean>
+    
+   <!--7.1  c schema bhi use kr skte hai -->
+    <!-- <bean class="com.springcore.ci.Certificate" name="cer" c:name="Python Programming"></bean> -->
+
+	<bean class="com.springcore.ci.Person" name="Person">
+   <!--1. constructor injection keliye tag hai-->
+   		<constructor-arg>
+   			<value>Sumit</value>
+  <!--2. iss value ko use krne ke 3 options hai, as a value use karo or as a property use kr skte ho aur C schema se de skte ho. C for constructor--> 
+   		</constructor-arg>
+   	<!--3. 	<constructor-arg value="Sumit"/> -->
+   		<constructor-arg value="45" type="int"/>
+   		<!-- 4. humne yahape type mention nhi kiya to spring itna intelligent hai ki humare pas ek hi contructor hai ji string and int le rha hai matlab 2nd value int hi hai, but agar 2 constructors hote jisme 2nd constructor mai dono paremters string hai woh iss 12 ko string wale constructor mai hi assign krdeta uss waqt hume mention krna pdeta hai type="int" -->
+   		
+   <!--5.  ek contructor-arg ka matlab hota hai ek parameter which we are passing in constructor, so pehle nam pass krhe, jitne constructor ke parameters hai utne utne contructor-arg pass karenge -->
+		 <!--6. iss bean ka woh constructor call hota jo parameters mai pehle string ki value le rha ho then integer value le rha ho -->
+		
+		
+		<constructor-arg ref="cer"></constructor-arg> <!--8. ek parameter badh gya isliye ek aur contructor tag dena padega -->
+	</bean>
+	 
+
+</beans>
