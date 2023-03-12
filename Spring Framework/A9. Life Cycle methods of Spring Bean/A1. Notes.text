@@ -1,0 +1,29 @@
+jab spring container kisika object banata hai to kon kons important stages hai jo uss bean ke pure life cycle mai kon konse process hote hai 
+
+Spring provides two important methods to every bean
+
+1) public void init() - yeh hota hai initialisation keliye
+2) public void destroy() - yeh hota hai destroy krne keliye
+
+inn dono methods ko spring automatic provide krdega bean mai.
+aap inke name change kr skte ho init aur destroy ki jagah dusre words use kr skte ho but syntax yahi rehna chahiye with no arguments.
+we can change the name of these methods.
+
+init: it is for initialisation, Loading configuration file, connecting database, webservices etc
+destroy: it is for clean up code. agr hume yeh database connection band krna hai to destroy ki help se kr skte hai
+
+
+Steps:
+
+1) Ek bean hogi humari jisme setters, getters honge aur iss bean ka metadata de denge i.e. Configuration.xml file
+   humara container object instantiate karega aur inki values set karega then yeh init() method ko call karega . then hum iss spring container se bean ka object mang skte hai kyuki bean ka object instantiate ho chuka hai(values set ho chuki hai aur initialisation bhi hua hai)
+   Then we can read and use the bean.
+2) jab aap iss bean ke methods ko call krloge then yeh destroy call karega uske object ko khatam krne se pehle. iss destroy mai clean up code likhna hai. cleanup ke bad yeh destroy karega.
+3) green ball indicate krha ki object bana hai and red yeh indicate krha ki object khatam hua
+
+
+======Configure Technnique=====
+means aap kaise call kr skte ho inn teeno methods ko
+1) xml: hum xml use kr skte hai inn dono methods ko configure krne keliye
+2) Spring interface 
+3) Annotation 
