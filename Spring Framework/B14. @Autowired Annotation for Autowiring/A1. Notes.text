@@ -1,0 +1,4 @@
+@autowired use krneke 3 tarike hai 
+i) aap setter injection ke upar @autowired annotation laga skte ho
+ii) variable/property ke upar laga skte ho
+iii) constructor ke upar laga skte ho
