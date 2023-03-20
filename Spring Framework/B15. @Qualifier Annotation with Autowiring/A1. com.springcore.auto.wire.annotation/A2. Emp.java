@@ -7,6 +7,7 @@ public class Emp {
 	
 	@Autowired
 	@Qualifier("temp") //iss qualifier ke andar hum de skte hai kis bean ko inject krna chahte hai. name of the bean denge
+	//The @Autowired and @Qualifier annotations are used to inject an instance of the Address class into the Emp class.
 	private Address address;
 
 	public Address getAddress() {
