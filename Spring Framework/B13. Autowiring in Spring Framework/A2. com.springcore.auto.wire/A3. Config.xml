@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p" xsi:schemaLocation="http://www.springframework.org/schema/beans
+ https://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/context/spring-context.xsd">
+    
+
+	 <!-- autowiring keliye, sabse pehle apko depdendent bean declare krni hai (address) -->
+	 <bean class= "com.springcore.auto.wire.Address" name="address">
+	 		<property name="street" value="IT Park road, Nagpur"/>
+	 		<property name="city" value="Nagpur"/>
+	 </bean>
+	 
+	 <!-- so emp mai mujhe address object chahiye so hum usko manually inject nhi karenge, hum autowiring se karenge kyuki yeh object hai aur woh primitives keliye use nhi kr skte. so hum sabse pehle byName wala autowiring karenge -->
+	 <bean class="com.springcore.auto.wire.Emp" name="emp" autowire="byName"></bean>
+	 <!-- jaisehi byName wala attribute apne use kiye. woh bhi Emp class ka object banayega to check karega ki iss Emp class mai hume chahiye ek address jiske variable ka name hai address to dekhega configuration file mai iss name(address) se koi bean hai kya. to upar hamari address ki bean hai to iss bean ka object woh sidha Emp ke address mai inject krdega -->
+	  <!-- aur isliye name same rakhna nhito error ajayega -->
+	  <!-- yahape autowiring hogyi jabki humne kahi nhi btaya tha ki iska object isme dalna hai. na apne p or c schema use kiya, na property injection use kiya -->
+		
+	  <!-- autowire="byType" use kiya to woh dekhega iska type Address hai to kya iss configuration file mai koi address wali bean hai, agar milgyi to ise inject krdega -->
+       <!-- agar yaha 2 beans hai same object type ke to exception dega -->
+       <!-- yeh simply setter method call krha hai inject krne kelye -->
+       
+      <!--  autowite = "contructor"; //ab emp ke andar ka contructor call hoga -->
+      
+</beans>
