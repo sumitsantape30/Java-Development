@@ -1,0 +1,27 @@
+-> it is the feature of spring framework in which spring container inject the dependencies automatically.
+-> jab ek class dusre class pe depeend krhi hoti hai
+-> Autowiring can't be used to inject primitive and string values. It works with reference only. 
+
+Ek object ko dusre se link krte hai to ise bolte hai wiring. automatic means yeh automatically link karega.
+
+linking ke 2 tarike hai.
+1) Manually ( <ref bean=""/>
+2) Automatically (automatically spring container krdega)
+
+
+Autowiring ko imlement krne ke 2 tarike hai
+1) XML
+2) Annotations
+
+1) XML ke through kiya to apko kuch modes milenge, 
+    no -> jo bean tag use krte the apne xml file mai agar kuch use nhi krte ho to woh by default mode hota hai, "no" means abhi autowiring enabled nhi hai
+    byName -> bean ke namewise, spring container uss bean ke nam ko search karega aur jaisehi nam milega woh dependencies inject krdega
+    byType -> uske type ko search kr skte ho ki yeh type chahiye mujhe, jaisehi uss type ka dependency milega usko inject krdega
+    contructor -> aap contructor call krke dependencies ko inject kr skte ho
+2) Annotations -> @autowired yeh dependency ko apke object mai inject krdega
+
+Autowiring Advantages: Automatic, less code
+Advantages: Not control of Programmer, It can't be used for primitive and string values.
+
+
+Isko banane keliye apko 2 classes banani pdegi, A depende krha B pe to hume B object inject krna hai A ke andar
