@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd
+       ">
+    
+   <!--  2. yahpe use karenge util schema aur banayenge standalone list. usse pehle xmlns mai util schema insert karo. p schema mai p ki jagah util daldo. aur nicheki 2 lines ko copy past krke context ki jagah util daldo-->
+      <util:list list-class="java.util.LinkedList" id="mybestfriends" > <!-- list mai class btani hai ki aap jo object banaoge woh kis class ka hoga so type list and press ctr+space. Then hum isko id denge jisse isko niche use karpayenge -->
+      	<value>Aman</value>
+      	<value>Raman</value>
+      	<value>Ankita</value>
+      	<value>Rohit</value>
+       <!-- apko vector mai store krna hai to list-class="java.util.ArrayList" likh skte ho. same list ko multiple bean mai use kr skte ho with the help of id -->
+      </util:list>
+    
+      <!-- 4. map keliye -->
+       
+       <util:map map-class="java.util.HashMap" id="fees">
+        <!-- map is collection of entries -->
+        	<entry key="Spring Framework" value="8000"/>
+        	<entry key="Django" value="5000"/>
+        	<entry key="Hibernate" value="2000"/>
+       
+       </util:map>
+    
+      <!--1. uss list hum data dalenge yahase but hum efficient way usr krenge-->
+      <bean class="com.springcore.standalone.collections.Person" name="person1">
+      	<!-- <property name="friends">
+      		yahape list banani hai to hum list tag use krke nhi banayenge
+      		<ref bean="mybestfriends"/>
+      		container smjh jayega ki friends property mai hume mybestfriends list dalni hai
+      	</property> -->
+      	
+      	<property name="friends" ref="mybestfriends"/> <!-- best way to write that -->
+      	
+      </bean>
+      
+      <!-- 5. standalone properties -->
+      <util:properties id="dbconfig">
+      <!-- isme class nhi btana kyuki properties usi class ko automatically refer krti hai, property khud class hai -->
+   			<prop key="driver"> com.mysql.jdbc.Driver</prop>
+   			<prop key="username"> Sumit</prop>
+   			<prop key="password"> 123456</prop>
+   			
+      </util:properties>
+      
+      
+      <!-- 3. data member initialising -->
+      <bean class="com.springcore.standalone.collections.Person" name="person2">
+        
+      	<property name="friends" ref="mybestfriends"/>
+      	<property name="feeStructure" ref="fees"/>
+      	<property name="properties" ref="dbconfig"/>
+      	
+      </bean>
+      
+      
+      
+      
+</beans>
