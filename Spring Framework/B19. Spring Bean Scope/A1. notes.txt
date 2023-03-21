@@ -4,6 +4,7 @@ The "scope" of a bean refers to the lifecycle of that bean within the Spring con
 There are several scopes available for Spring beans, including:
 
 Singleton: This is the default scope. It means that the Spring container will create only one instance of the bean and reuse it for all requests.
+           bar bar agar call kiya to woh isi object reference bar bar deta rahega. agar unka hashcode check karoge to unka ek hi hoga
 
 Prototype: This scope means that the Spring container will create a new instance of the bean every time it is requested.
 
