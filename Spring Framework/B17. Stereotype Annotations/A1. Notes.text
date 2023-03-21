@@ -1,0 +1,13 @@
+jo kam hum xml ke andar krhe the ab hum woh kam annotation ke through karenge
+ab hum woh bean wala tag use nhi karenge. annotations use krke spring container ko pta chalega ki hume iss class ka object banana hai 
+yeh kam hum kr skte hai with @Component annnotation.
+
+@Component
+class Student{
+
+}
+
+yeh krne se same kam hoga. apko simply apne configuation file ko btana hoga ki yeh jo class hai woh kis package mai hai.
+<context:component-scan base-package=""/>
+agar aap nhi btaoge humari class kaha rakhi hui hai to spring container use scan nhi ka paryega. jaisehi usse milgya woh scan karega uss package mai and also in its subpackage
+
