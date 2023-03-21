@@ -1,0 +1,19 @@
+In Spring Framework, a "bean" is simply an object that is managed by the Spring container. 
+The "scope" of a bean refers to the lifecycle of that bean within the Spring container.
+
+There are several scopes available for Spring beans, including:
+
+Singleton: This is the default scope. It means that the Spring container will create only one instance of the bean and reuse it for all requests.
+
+Prototype: This scope means that the Spring container will create a new instance of the bean every time it is requested.
+
+Request: This scope means that the Spring container will create a new instance of the bean for every HTTP request.
+
+Session: This scope means that the Spring container will create a new instance of the bean for every HTTP session.
+
+Global session: This scope is similar to the session scope, but it is used for Portlet applications.
+
+Custom: You can define your own custom scope if you have a specific use case that is not covered by the built-in scopes.
+
+By default, all Spring beans are created with the singleton scope. However, you can specify a different scope for a bean by adding
+the appropriate scope attribute to its definition in the Spring configuration file.
