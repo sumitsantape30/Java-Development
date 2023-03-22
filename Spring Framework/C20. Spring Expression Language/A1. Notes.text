@@ -12,6 +12,12 @@ Some examples of SpEL expressions are:
 #{person.name} - Evaluates to the value of the "name" property of the "person" bean in the Spring container.
 Overall, SpEL provides a powerful and flexible way to build and evaluate expressions in Spring applications.
 
+Supports Parsing and executing expression with the help of @Value annotations
 
+Expression     @Value("#{expression}")
+expression can be Classes, Variables, Methods, Constructors, Objects and symbols.
+symbols can be char, numerica, operators, keywords and special symbols which return a value. 
 
-
+@Value("#{11+22}") = 33
+@Vlue("#{8>6?88:66}")
+you can also call object methods, static methods, variable
