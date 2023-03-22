@@ -1,0 +1,3 @@
+to invoke static method and variable:
+expression ke andar yeh format follow krna hoga, for method: T(class).method(param) {T ke bad uss class ka nam likhna jis class ka method invoke krna chahte ho}
+for variable: T(Class).variable 
