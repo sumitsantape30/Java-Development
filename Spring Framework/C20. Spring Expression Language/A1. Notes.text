@@ -1,0 +1,17 @@
+Spring Expression Language (SpEL) is a powerful expression language that provides a way to dynamically evaluate expressions at runtime. It is a part of the Spring Framework and is used extensively in Spring applications.
+
+SpEL provides a rich set of features for building expressions, including arithmetic operations, logical operators, comparison operators, regular expressions, and more. It also provides a way to reference beans and properties in the Spring container, making it easy to integrate with Spring applications.
+
+SpEL can be used in various contexts, including configuration files, annotations, and code. It can be used to configure properties of beans, to evaluate conditions in a conditional bean definition, and to perform data binding.
+
+Some examples of SpEL expressions are:
+
+#{3 + 4} - Evaluates to 7
+#{'Hello ' + 'World!'} - Evaluates to "Hello World!"
+#{T(java.lang.Math).PI * 5} - Evaluates to approximately 15.7
+#{person.name} - Evaluates to the value of the "name" property of the "person" bean in the Spring container.
+Overall, SpEL provides a powerful and flexible way to build and evaluate expressions in Spring applications.
+
+
+
+
