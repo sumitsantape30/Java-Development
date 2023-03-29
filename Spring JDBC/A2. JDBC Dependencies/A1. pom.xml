@@ -41,6 +41,8 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.30</version>
 		</dependency>
+		
+		//do ctrl+save after adding the dependencies
 
 
 		<dependency>
