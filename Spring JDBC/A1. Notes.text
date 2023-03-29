@@ -1,0 +1,24 @@
+Spring JDBC
+->Spring JDBC is a powerful mechanism to connect to the database and execute SQL queries.
+-> Java Program ke through database ke sath connect and communicate krne mai help karega Spring jdbc module(jdbc-Template). yeh internally purane wale jdbc ko hi use karega.
+
+Old JDBC
+1. It is an API which helps to perform operation with database like insert,delete etc
+Spring jdbc wahi kam krta hai jo jdbc krta tha but it has some benefits.
+
+Problems of JDBC
+- We need to write lot of code.
+- Exception Handling Problem: checked Exception
+  SQLException: jdbc mai barbar exception aati thi to hume handle krna pdta tha
+- Repeating of all these codes from one to another database logic is a time consuming task.
+
+solution to all these problems is Spring JDBC.
+-Spring jdbc provide class jdbcTemplate which has all important methods to perform operation with database. jaisehi aap jdbcTemplate ka object bana loge uske pas woh sare functionalities ayegi.
+
+jdbcTemplate ka object bana lenge, then hum usme queries fire kr skte hai
+and is jdbcTemplate ko ek dataSource ka object chahiye.
+and dataSource is basically a interface aur isi interface ka object jdbcTemplate ko chahiye.
+thing is iss interface ko dataSouce ka object kaisse denge dataSource ko. to humare pas iski ek implmentation class hai DriveManagerDataSource. yeh implement krhi hai humare interface ko.
+
+so basically we're going to inject object of DriveManagerDataSource class to the dataSource property of jdbc template. to uske liye hume sari woh information deni hogi jisse jdbcTemplate connect karpayega humare database se.
+1) driverClassName 2)url 3)username 4)password-> after giving these 4 properties the object of DriveManagerDataSource class can be given to dataSource property.
