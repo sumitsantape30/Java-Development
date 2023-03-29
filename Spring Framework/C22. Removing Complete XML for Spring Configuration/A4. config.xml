@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd">
+     
+<!--       bean ki configuration humne @Component se krdi hai but hume container ko btana hoga yeh @Component class kis package mai hai. base package btana hoga, agar nhi btaya to yeh object nhi bana payega-->     
+ 		<context:component-scan base-package="com.springcore.javaconfig"/> <!-- ab usko pta chal jayega ki yeh component wali class javaconfig mai hai -->
+</beans>
