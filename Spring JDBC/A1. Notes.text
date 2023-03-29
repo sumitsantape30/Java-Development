@@ -22,3 +22,8 @@ thing is iss interface ko dataSouce ka object kaisse denge dataSource ko. to hum
 
 so basically we're going to inject object of DriveManagerDataSource class to the dataSource property of jdbc template. to uske liye hume sari woh information deni hogi jisse jdbcTemplate connect karpayega humare database se.
 1) driverClassName 2)url 3)username 4)password-> after giving these 4 properties the object of DriveManagerDataSource class can be given to dataSource property.
+
+
+JDBC Template important methods
+1) update() -> insert, update, delete
+2) execute() -> select wali queries fire krne keliye kyuki yeh hume result dega
