@@ -12,9 +12,9 @@
 	<!-- 4. yaha drivermanager ka banayenge, ctrl+shift+t krke wahase DriverManagerDataSource ka package copy krlo -->
 	<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" name="ds">
 	<!-- iski 4 properties hai woh bhi set krni pdegi -->
-		    <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+		    <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
 			<property name="url" value="jdbc:mysql://localhost:3306/springjdbc"></property>
-			<property name="username" value="sumit"/>
+			<property name="username" value="root"/>
 			<property name="password" value="Sumit@123"/>
 	 <!-- inko aap ek line mai likh skte ho using p schema -->
 	</bean>
