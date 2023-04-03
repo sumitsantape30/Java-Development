@@ -1,0 +1,20 @@
+hume jo last queries ki thi woh koi data retrieve nhi krhi thi.
+select ki jitni bhi queries hai woh sab data retrieve krti hai.
+
+JDBC Template ki methods jo hume help karenge select query ko perform krne mai
+
+1) Agar aap single row ki query fire krhe ho to apko queryForObject wala method call krna hai 
+   public T queryForObject(String sql, RowMapper<T> rowMapper, Object args)
+   String sql - Select query
+   rowMapper - Converts result set into object
+       ResultSetObject ----------> |Row Mapper| ------------> Class Object
+                                        ^
+                                        |
+                                        |
+                                        |
+                            | Implementation of row mapper |
+       
+       //agar RowMapper mai Employee generic(T) use kiya hoga to Class Object is basically Employee
+       //Implementation of row mapper: yeh hum khudse define karenge, isme basically likhenge ki resultset ki konsi value kis object ki property mai jayegi. resultset ka konsa column kis object ki proprty mai set hoga.
+       
+       
