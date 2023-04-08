@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+           <!-- 20. Transactional ko enable krna hoga -->
+           <tx:annotation-driven/>
+
+<!-- 	2. sara configuration yaha denge-->
+
+		<!-- 15. DataSource ka bean -->
+		<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" name="ds"> <!-- yahi ds 14th mai pass krdo -->
+		
+		<!-- 18. dataSource complete krne keliye kuch chize pass krni hogi, url, username, password -->
+			
+			<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+			<property name="url" value="jdbc:mysql://localhost:3306/springjdbc"/>
+			<property name="username" value="root"/>
+			<property name="password" value="Sumit@123"/>
+			
+		</bean>
+
+		<!-- 12. LocalSessionFactoryBean ka object banayenge yaha. aur fir yeh reference pass karenge -->
+		<bean class="org.springframework.orm.hibernate5.LocalSessionFactoryBean" name="factory"> <!-- class ka name ctrl+T krke waha LocalSessionFactoryBean search krke top pe import krke class hai woh lenge -->
+		
+		<!-- 13. LocalSessionFactoryBean ko bhi 3 chize deni hai -->
+			<property name="dataSource" ref="ds"></property> <!--14. sabse pehle dataSource chahiye to uske bhi bean declare krna padega -->
+		    <!-- 16. ab hibernate ki properties pass krni hai -->
+		    <property name="hibernateProperties">
+		    	<props>
+		    		<!-- yaha 3 properties dalenge -->
+		    		<prop key="hibernate.dialect">org.hibernate.dialect.MySQL57Dialect</prop> <!-- ctrl+T krke dialect search karo aur MySQL57Dialect wali class open krke package name aur class name lelo -->
+		    		<prop key="hibernate.show_sql">true</prop>
+		    		<prop key="hibernate.hbm2ddl.auto">update</prop>
+		    		<!-- jitni properties deni hai utni yaha de skte ho -->
+		    	</props>
+		    
+		    </property>
+		    
+		 <!-- 17. ab last mai AnnotatedClass dena hai -->
+		    <property name="mappingResources"> <!-- for XML use mappingResources insted of annotated class -->
+		    	<list>
+		    	<!-- value mai woh sari classes pass karenge jo apne annotate kiye hai -->
+		    		<value>
+		    		com.spring.orm.entities.Student;
+		    		</value>
+		    		<!-- jitni classes hai utni bar likh skte ho -->
+		    	</list>
+		    </property>
+		    
+		</bean>
+		
+       <!-- 9. hibernateTemplate bean -->
+       <bean class="org.springframework.orm.hibernate5.HibernateTemplate" name="hibernateTemplate">
+       
+       <!--10. iske pas bhi properties hai woh bhi dekhni hai, hume hibernateTemplate mai session factory ka objec chahiye -->
+        	<property name="sessionFactory" ref="factory"></property> <!--11. but hum sessionFactory ka object pass nhi kr skte LocalSessionFactoryBean ka object banana pdega -->
+       </bean>
+ 
+   <!--  8. StudentDao ki configuration -->
+   <bean class="com.spring.orm.dao.StudentDao" name="studentDao">
+   	  <!-- isme apko hibernateTemplate ki value set krni hai -->
+   	  	<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+   	  	<!-- isme object pass krna hai hibernaTemplate ka to woh object banao. upar jo object banayenge woh ajayega ref wali property mai -->
+   </bean>
+   
+   <!-- 19. ek aur bean declare karenge, hiberanationDriverManager ki -->
+   <bean class="org.springframework.orm.hibernate5.HibernateTransactionManager" name="transactionManager">
+   		<property name="sessionFactory" ref="factory"></property>
+   </bean>
+  
+   
+</beans>
