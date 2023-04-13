@@ -1,0 +1,19 @@
+Model - means data hai
+view - Presents data to user
+control - Interface between model and view. controlling your data
+
+MVC Design pattern - way to organise the code in our application
+
+problem without MVC Design pattern
+
+example hotel mai agar ek hi employee hai to usko hi order lena, then uss order ko banana then usko serve krna yeh sare kam usko hi krna padega. tabhi dusra customer aya to current kam chhodke new cutstomer ke pas jana padega.
+to yeh problem solve krne keliye mai kya karunga ek A bande ko order lene keliye rakhunga aur maine 2 cooks ko hire krke unko cooking ka kam dunga. aur delivery keliye ek B banda rakha.
+to maine 3 components bana diye.
+maine ek kak ke multiple components bana diye yahi hum mvc se achieve kr skte hai.
+
+jo chefs hai woh ingredients use krke means models use krke business logic banayenge. Database chahiye hoga to DAO banaloge. Delivery view hai apna jsp se response bhej dega
+
+
+Working of Spring MVC
+
+yeh client server base model pe kam krta hai. 
