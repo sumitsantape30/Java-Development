@@ -1,0 +1,37 @@
+springboot submodule hai spring ka 
+Spring Boot is a module of spring from which we speed up the development.
+
+Spring Boot
+It Provides a faster way to set up, configure, and run both simple and web based applications. 
+
+Spring Framework + Embeded Server(tomcat etc) - Configuration(xml, annotations sabko hata dega) = Boot
+
+convention over configuration software design style.
+It decreases the effort of the developer. 
+Opinionated Default- Automatically Configure.
+
+JPA ki dependency apne project mai lagayi hui hai. spring boot apke class path ko scan karega uar usko JPA ki dependency mili to woh smjh lega ki you will use JPA to woh khudse configuration krdega. humko sirf usse use krna hai 
+scan the class and find the dependency it will automatically configure the things. 
+
+*Advantages Of Spring Boot*
+
+-> It creates stand-alone Spring Application that can be started using Java -jar.
+-> Embed tomcat, Jetty or undertow Directly (no need to deploy WAR files) (embeded server deta hai)
+-> Provide Opinionated 'starter' dependencies to simplify your build configuration. 
+-> Automatically configure spring and 3rd party libraries whenever possible. 
+-> Provide production-ready features such as metrics, health checks, and externalized configuration.
+-> Absolutely no code generation and requirement for XML Configuration.
+//humko bas dependencies lagani hai aur yeh sari configuration krdega hume koi configuration nhi krni. 
+
+
+How Spring Boot Auto Configuration Magic works 
+
+Spring-boot-starter-web
+spring-boot-starter-data-jpa
+other....
+//jaisehi humne yeh dependency lagayi maven sarem JARs ko pull krlega.
+//when we add starter jars then it will pull all the jars. 
+
+Jar contain 
+META-INF/spring.factories iss file ke andar sari autoconfiguration banayi gyi hai. 
+iske andar ki configuration are enabled and disabled based on some condition. like app security wala module use nhi krhe ho to woh active nhi hoga. 
