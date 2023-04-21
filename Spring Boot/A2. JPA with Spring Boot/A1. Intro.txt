@@ -1,2 +1,29 @@
 spring boot mai JPA ke thorough data ko handle karenge.
 JPA - Java Persitence API, JPA ek ORM tool hai.
+
+JPA hume 2 important interfaces provide krta hai, 
+EntityManagerFactory
+EntityManager
+
+->aur EntityManager hume woh sari functionalities provide krega like
+Create, Read, Updade, Delete 
+-> aur EntityManagerFactory hume provide krdega EntityManager ka object. 
+
+SpringBoot makes easier to perform operations with JPA
+-> hume isme dependency lagani hai spring-boot-starter-data-jpa iss configuration hojayegi.
+
+->agar apko user ke object ke sath database operations perform krne hai. Hume database layer pe kuch na kuch banana padega to hum database layer pe banayenge UserRepository same as Dao. Yeh UserRepository extend karega CRUDRepository ko. CRUDRepository spring ka interface hai. yeh sari functionalities provide karega to perform database operations. 
+-> Agar aap CRUDRepository nhi implement krna chahte to uski ek child repository hai JPARepository aap usko extends kr skte ho, yeh extra fuctionality provide krta hai.
+
+
+
+                    CRUDRepository
+      USER                ^                     JPA Repository
+                          |                        ^
+                       UserRepository  ------------|
+                       
+                  USER and UserRepositry hum banayenge aur CRUDRepository aur JPA Repository are interfaces which are provided in spring boot.
+                  USER is class, USERRepository is a interface, 
+                  
+  Summary
+agar apko operation perform krna hai koi bhi user, employee, product ho uska apko repository banana hai database layer pe eg USERRepository, uske bad apko 2 mese ek kam krne hai. ya to uss repository interface ko extend krna hai CRUDRepository ko, (extend isliye kyuki dono interfaces hi hai) yafir JPARepositry ko extend kare kyuki woh CRUDRepo ko hi extend krha. 
