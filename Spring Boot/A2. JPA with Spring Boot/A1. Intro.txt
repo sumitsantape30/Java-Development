@@ -1,0 +1,2 @@
+spring boot mai JPA ke thorough data ko handle karenge.
+JPA - Java Persitence API, JPA ek ORM tool hai.
