@@ -1,0 +1,7 @@
+Application Configuration krneka yeh acha tarika hai. Properties file mai aap key value pair mai data rakh skte ho. 
+
+
+jab aap project create krte ho to apko Preconfigured Application milti hai, apki sari configuration hojayegi springboot ki. sari chize preconfigured miljayegi, ab apko woh preconfigured chize apni according customize krni hai.
+isliye hume appication-properties file milti hai jisme apn customisation kr ske. isme sirf key-value deni hai apko. 
+
+Another option to configure your application is application.yml file
