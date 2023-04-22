@@ -1,0 +1,22 @@
+mujhe JPA CRUD operations krne keliye UserRepository interface banaya jo ki CrudRepository ko extend krta hai jisse hume sari methods milgyi thi.
+find
+findById
+findAll
+etc, yeh sari methods by default apko CRUD Repository se mili hai.
+but jaruri nhi hai ti innhi methods se apka kam hojaye ho skta hai apko by name data nikalna ho,
+data by name.
+data by name and password,
+data by name or password
+data starting with prefix
+data by name like 'keyword'
+aise number of functions ho skte hai jo apko chahiye honge. to aap aise Custom Finder methods bana skte ho. (also known as Derived Query Methods)
+But iski implementation aap nhi likhoge aap bas prototype mention karoge, that means aap function ka name, return type aur argument mention karoge apne aap se implementation spring JPA de dega. 
+
+
+humko aise likhna hai ki woh smjh ske ki hume kya chahiye
+
+select * from user where name="something";
+
+public List<User> findByName(String name); //humne List di return type mai matlab muje sare useres chahiye, then name argument diya, aur uss string name mai "something" hoga to woh smjhega ki acha yeh chahiye tumhe.
+
+apko iski implementation nhi deni hai, spring jpa kya karega findByName is function se khudse smjhega apko bas call krna hoga, apko yeh methods usi interface ke andar banane padenga.
