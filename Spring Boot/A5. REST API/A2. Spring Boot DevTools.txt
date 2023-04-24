@@ -1,0 +1,11 @@
+DevTools stands for Developer Tool. The main aim of the module is to try and improve the development time while working with the spring boot application.
+Spring DevTools pick up the changes and restart the application.
+
+sabse pehle hum spring-boot-devtoola apni pom.xml mai add karenge. and then hume kuch features provide karega. 
+
+Features of Devtools
+
+1) Property Defaults
+2) Automatic Restart
+3) Live Reload
+4) Remote Applications
