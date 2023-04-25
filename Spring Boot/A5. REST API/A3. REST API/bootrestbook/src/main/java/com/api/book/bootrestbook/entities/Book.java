@@ -2,7 +2,6 @@ package com.api.book.bootrestbook.entities;
 
 public class Book{
 
-    //9. yaha book ki properties rakhenge
     private int id;
     private String title;
     private String author;
