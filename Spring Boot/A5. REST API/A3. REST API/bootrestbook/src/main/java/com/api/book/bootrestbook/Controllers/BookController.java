@@ -5,7 +5,6 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +20,6 @@ import com.api.book.bootrestbook.entities.Book;
 @RestController
 public class BookController {
     
-
     @Autowired 
     private BookService bookService;
     
@@ -48,13 +46,11 @@ public class BookController {
     @PostMapping("/books") 
     public ResponseEntity<Book> addBook(@RequestBody Book book){ 
 
-        Book b = null;
-
-       try{
-         b =  this.bookService.addBook(book);
+        try{
+         this.bookService.addBook(book);
          System.out.println(book);
          return ResponseEntity.status(HttpStatus.CREATED).build();
-
+         
        }catch(Exception e){
 
          e.printStackTrace();

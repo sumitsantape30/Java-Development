@@ -1,25 +1,29 @@
 package com.api.book.bootrestbook.entities;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
-@Entity //1. configuration karenge
-@Table(name="books") // databse table ka nam books rakha
+@Entity 
+@Table(name="books") 
 public class Book{
 
-    //2. so Book as a entity treat hoga, Entity banate ho to apko ek primary key banani hoti hai so @Id likhenge aur auto increament krna hai to @GeneratedValue
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="book_id")
-    private int id; //3. yeh automatic generate hojayega depeding upon database algorithm. har book keliye automatic generate hogi. application-properties open krke configuration karo
+    private int id; 
     private String title;
-    private String author;
 
-    public Book(int id, String title, String author) {
+    //1. isko non primitive matlab author ke object ki form mai rakhenge, niche sari jagah Author karo and create class Author.java
+    @OneToOne(cascade = CascadeType.ALL)   //10. yeh unidirectional hai hum book se author ki taraf jarhe hai, author se book ki taraf nhi jarhe. ek book ke pas ek hi author hoga. cascade ki help jitne bhi authors honge book keandar woh bhi save hojayege nhito yeh error dega, humne book bhi deete ki to uthor bhi automatically delete hojayega
+    private Author author;
+
+    public Book(int id, String title, Author author) {
         this.id = id;
         this.title = title;
         this.author = author;
@@ -44,11 +48,11 @@ public class Book{
         this.title = title;
     }
 
-    public String getAuthor() {
+    public Author getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
+    public void setAuthor(Author author) {
         this.author = author;
     }
 

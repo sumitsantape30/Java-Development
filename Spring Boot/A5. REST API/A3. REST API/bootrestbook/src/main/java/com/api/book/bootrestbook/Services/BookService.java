@@ -10,13 +10,10 @@ import com.api.book.bootrestbook.entities.Book;
 
 @Component 
 public class BookService {
-
-    //8. humne jo dao mai banaye tha uska object chahiye, isko autowire karenge to iske object apne aap yaha ajayega
     
     @Autowired
     private BookRepository BookRepository;
    
-    //7. iss list ki jarurat nhi hai to comment krdo
     // private static List<Book> list = new ArrayList<>();
     
     // static{
@@ -27,11 +24,10 @@ public class BookService {
     // }
     
     public List<Book> getAllBook(){
-        List<Book> list = (List<Book>)this.BookRepository.findAll(); //9.yeh ek iterable dega, isko typecast karenge list mai
-        return list;
+        List<Book> list = (List<Book>)this.BookRepository.findAll(); 
+       return list;
     }
 
-    //10. 
     public Book getBookById(int id){
 
         Book book = null;
@@ -45,8 +41,7 @@ public class BookService {
         }
         return book;
     }
-
-    //11.
+   
      public Book addBook(Book b){ 
         Book result=  BookRepository.save(b);
         return result; 
@@ -57,11 +52,9 @@ public class BookService {
     }
 
     public void updateBook(Book book, int bookId){
-        //13. agar yeh bookId new id hai to usko book mai dal denge
         book.setId(bookId);
 
-        BookRepository.save(book); //12. save aur update same hi kam krta hai
-        //book ko update krdega
+        BookRepository.save(book); 
     }
 
 }
