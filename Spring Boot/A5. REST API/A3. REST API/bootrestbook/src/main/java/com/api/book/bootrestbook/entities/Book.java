@@ -1,5 +1,7 @@
 package com.api.book.bootrestbook.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -19,9 +21,9 @@ public class Book{
     private int id; 
     private String title;
 
-    //1. isko non primitive matlab author ke object ki form mai rakhenge, niche sari jagah Author karo and create class Author.java
-    @OneToOne(cascade = CascadeType.ALL)   //10. yeh unidirectional hai hum book se author ki taraf jarhe hai, author se book ki taraf nhi jarhe. ek book ke pas ek hi author hoga. cascade ki help jitne bhi authors honge book keandar woh bhi save hojayege nhito yeh error dega, humne book bhi deete ki to uthor bhi automatically delete hojayega
-    private Author author;
+    @OneToOne(cascade = CascadeType.ALL)   
+    @JsonManagedReference
+    private Author author;//5. parent field ke pas JsonManagedReference lagayenge
 
     public Book(int id, String title, Author author) {
         this.id = id;

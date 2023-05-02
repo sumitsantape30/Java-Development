@@ -1,42 +1,42 @@
 package com.api.book.bootrestbook.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 
-//5. jab book ki id, title save hoga to hume Author bhi sathme save krna hai so iss Author ko bhi @Entity mark pdega
-@Entity //6. @Table(name= "authors") //apne yaha nam nhi diya to bydefault "Author" hojayega name
+@Entity 
 public class Author {
-    //2. author ke pas kya hoga hum yaha explicitely bta skte hai
 
-    //7. isko primary ke banayenge aur yeh automatically update honi chahiye
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int authorId;
 
-    //8. 
     @Column(name="first_name")
     private String firstName;
     private String lastName;
 
-    //9. main bat yeh hai ki yeh Author.jav class Book.java mai declare kiye hue author se mapped kaise hai
-    //obvious bat hai ek book ke pas ek hi author hoga to mai yaha bat krne wala hu one-to-one relationship
-    //open Book.java aur author ko oneToone declare karo
-
-    //3. aap is author ke andar aur koi non primitive datatype rakh skte ho like Language
-    //private Language language ;
     private String language;
 
-    //4. getter setters etc add krdo
+    //1. yaha book banayenge. ab humare book ke pas author hai aur author ke pas book, this is multidirectional
+    @OneToOne(mappedBy = "author") 
+    @JsonBackReference //6. means iske piche nhi jana hai kyuki Book se author ke pas aaye hai agar idhar se bhi udhar jaoge to infite loop chalta rahega. ab jab aap book nikaloge to author milega aur author nikaloge to book nhi milega
+    private Book book; //2.hum chahte hai yeh book ek extra column na create krde humare database mai 
+    //3. iske getters setter bana lo. ab hum application ko run karenge to infinite loop hojayega kyuki dono objects overlap krhe hai
+    //4. isliye book.java mai author ke upaer JsonManagedReference lagao
+
     public int getAuthorId() {
         return authorId;
     }
+
     @Override
     public String toString() {
         return "Author [authorId=" + authorId + ", firstName=" + firstName + ", lastName=" + lastName + ", language="
-                + language + "]";
+                + language + ", book=" + book + "]";
     }
     public Author(int authorId, String firstName, String lastName, String language) {
         this.authorId = authorId;
@@ -69,6 +69,14 @@ public class Author {
     }
     public void setLanguage(String language) {
         this.language = language;
+    }
+
+    public Book getBook() {
+        return book;
+    }
+
+    public void setBook(Book book) {
+        this.book = book;
     }
     
 }
