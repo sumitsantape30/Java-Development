@@ -4,3 +4,5 @@ sath sync hojata hai.
 
 Book.java yeh entity humari define krhi hai database ko, aur id, authors yeh columns hai table ke. inke datatypes primitives hai but agar mujhe author ki aur information store krni hai to iss Author ka datatype object rakh skta hu, aur Author class create krke usme author ki properties rahegi.
 means nesting krhe ek object ke andar dusra object.
+
+OneToOne matlab ek book ko ek hi author ho skta hai aisa hum implement krhe.
