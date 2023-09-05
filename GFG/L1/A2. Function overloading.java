@@ -17,7 +17,7 @@ public class Main {
 	
 	public static void subs( int a, int b) {
 		
-	}
+	}// will show error
 	//this is not function overloading. arguments should have different datatypes.
 	// it will cause an ambiguity. main method se functon ko call kiya to usko nhi smjhega which function to call
     // so this an compilation error
