@@ -51,3 +51,24 @@ public class Main {
 }
 
 //another way is just using our regular way of implementing interfaces
+//you should use interface like a contract, forcing other class to implement for us.
+//and interfaces and extend multiple classes
+
+package Codes;
+
+import java.util.List;
+
+public interface sampleInterface extends Runnable, List {
+	//now the class implementing sampleInterface will have to implement all the methods of sampleInterface, Runnable, List.
+	//you're making compulsory for the class that is imlementing you(sampleInterface) to implement all the methods 
+	
+	public void add(int a, int b);
+	
+	int substract(int a, int b);
+	
+	default int multiply(int a, int b) {
+		return a*b;
+	}
+}
+
+
