@@ -49,3 +49,5 @@ public class Main {
 	}
 
 }
+
+//another way is just using our regular way of implementing interfaces
