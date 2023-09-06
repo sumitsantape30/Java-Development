@@ -31,3 +31,58 @@ public class Main {
 	}
 
 }
+
+package Codes;
+
+public abstract class Calculator {
+	
+	public abstract int add(int a, int b);
+	
+	public abstract int mult(int a, int b);
+	
+	
+	public int sub(int a, int b) {
+		return a-b;
+	}
+}
+
+package Codes;
+
+public class IndCalculator extends Calculator {
+
+	@Override
+	public int add(int a, int b) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int mult(int a, int b) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+}
+
+package Codes;
+
+public interface OneInterface {
+	
+	public void getName();
+	
+	default String getColour() {
+		return "white";
+	}
+}
+
+package Codes;
+
+public class oneInterfaceImpl implements OneInterface {
+
+	@Override
+	public void getName() {
+		// TODO Auto-generated method stub
+		
+	}
+}
+
+
