@@ -52,7 +52,7 @@ public class Main {
 
 //another way is just using our regular way of implementing interfaces
 //you should use interface like a contract, forcing other class to implement for us.
-//and interfaces and extend multiple classes
+//and interfaces can extend multiple classes
 
 package Codes;
 
