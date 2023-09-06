@@ -1,8 +1,8 @@
 Final keyword can be used on 3 places
 
 1. Variable - can be initialised only in the constructor or during declaration.
-2. Functions
-3. Classes
+2. Functions- final functions cant be overidden.
+3. Classes- final classes cant be inherited.
 
 Static variable can be initialized inside static block
 you can define static variable inside non static functions but non static variable cant be defined in static functions.
