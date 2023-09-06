@@ -1,3 +1,5 @@
+Use of Singleton Class- A class having single object is called singleTon class
+  
 A Singleton class is a design pattern in software engineering that restricts the instantiation of a class to a single instance and 
   provides a global point of access to that instance. In other words, it ensures that there is only one instance of the class created 
 and that it can be accessed from anywhere within the application. The Singleton pattern is used for various reasons:
