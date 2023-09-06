@@ -33,3 +33,43 @@ Example:
 instead we can create DBConnection.java aur uske thorugh connection denge isse humare resources save hue.
 
 2. while booking ticket 100 tickets are not getting booked with 100 objects, itis getting booked with 1 object only
+
+  
+package Codes;
+
+public class Main  {
+	
+	private Main() {
+		
+	}
+	
+	public static Main object;
+	
+	private static Main getInstace() {
+		if( object == null) {
+			object= new Main();
+		}
+		
+		return object;
+	}
+	
+	public void bookTicket() {
+		
+	}
+	
+	public static void main(String[] args) {
+
+		Main obj1= Main.getInstace();
+		Main obj2= Main.getInstace();
+		Main obj3= Main.getInstace();
+		Main obj4= Main.getInstace();
+
+		obj1.bookTicket();
+		obj2.bookTicket();
+		obj3.bookTicket();
+		obj4.bookTicket();
+		//so i'm using same object for booking the tickets
+		//from one connection we're making multiple calls	
+	}
+
+}
