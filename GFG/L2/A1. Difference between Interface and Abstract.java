@@ -23,9 +23,10 @@ public class Main {
 		
 		OneInterface f1= new oneInterfaceImpl();
 		
-		//not possible coz unme not implemented functions hai
-		//Calculator c2= new Calculator();
-		//OneInterface f2= new OneInterface();
+		//not possible coz unme not implemented functions hai, humko inka object banana hai to anonoymous inner class use krke un functions ko implement krke hum object bana skte hai
+		//Calculator c2= new Calculator(){};
+		//OneInterface f2= new OneInterface(){};
+
 		
 	}
 
