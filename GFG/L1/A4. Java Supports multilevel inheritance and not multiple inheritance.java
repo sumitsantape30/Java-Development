@@ -46,7 +46,7 @@ public class Child extends Parent {
 		//child is inheriting from parent and parent is inheriting from grandparent
 		
 		//but multiple inheritance is not possible in java like - Child extends Parent,GrandParent 
-		//one class cannot inherit from multiple classes due ambiguity, soppose same function is defined in parent and grandparent now my child wont understand which function is called parent one or grandparent one
+		//one class cannot inherit from multiple classes due ambiguity, soppose same function is defined in parent and grandparent now my child wont understand which function to call parent one or grandparent one
 		
 	}
 
