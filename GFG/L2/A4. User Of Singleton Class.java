@@ -29,5 +29,7 @@ Logging and Error Handling: Singletons can be used to centralize logging and err
 
 Example:
 
-humare pas java application hai usme 4 classes hai aur usko mySQl ke sath connect krna hai, 4 classes ko sql ke sath krne keliye 4 connections banane padenge
+1. humare pas java application hai usme 4 classes hai aur usko mySQl ke sath connect krna hai, 4 classes ko sql ke sath krne keliye 4 connections banane padenge
 instead we can create DBConnection.java aur uske thorugh connection denge isse humare resources save hue.
+
+2. while booking ticket 100 tickets are not getting booked with 100 objects, itis getting booked with 1 object only
