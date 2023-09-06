@@ -2,7 +2,9 @@ package Codes;
 
 public class Main implements Comparable<Main> {
 	//iss Comparable mai aur bhi methods hongi unimplemented but humko error nhi aya coz every class in java is implemented from object class
-
+	//but compareTo() is present is object.java isliye it showed that function automatically
+	//The compareTo() method is not implemented in the Object class in Java
+	
 	int age;
 	String name;
 	
