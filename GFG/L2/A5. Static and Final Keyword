@@ -1,0 +1,8 @@
+Final keyword can be used on 3 places
+
+1. Variable - can be initialised only in the constructor or during declaration.
+2. Functions
+3. Classes
+
+Static variable can be initialized only inside static block
+it can't be initialized inside constructor or inside main function.
