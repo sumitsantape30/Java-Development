@@ -1,7 +1,8 @@
 package Codes;
 
 public class Main implements Comparable<Main> {
-	
+	//iss Comparable mai aur bhi methods hongi unimplemented but humko error nhi aya coz every class in java is implemented from object class
+
 	int age;
 	String name;
 	
