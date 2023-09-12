@@ -26,4 +26,6 @@ SpringBoot makes easier to perform operations with JPA
                   USER is class, USERRepository is a interface, 
                   
   Summary
-agar apko operation perform krna hai koi bhi user, employee, product ho uska apko repository banana hai database layer pe eg USERRepository, uske bad apko 2 mese ek kam krne hai. ya to uss repository interface ko extend krna hai CRUDRepository ko, (extend isliye kyuki dono interfaces hi hai) yafir JPARepositry ko extend kare kyuki woh CRUDRepo ko hi extend krha. 
+agar apko operation perform krna hai koi bhi user, employee, product ho uska apko repository banana hai database layer pe eg 
+USERRepository, uske bad apko 2 mese ek kam krne hai. ya to uss repository interface ko extend krna hai CRUDRepository ko, (extend isliye 
+kyuki dono interfaces hi hai) yafir JPARepositry ko extend kare kyuki woh CRUDRepo ko hi extend krha. 
