@@ -6,12 +6,12 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 //1. sabse phele user banaye. isme woh fields rahegi jo apko database mai chahiye, agar woh database mai hai to donoko map krdo like hum orm mai krte the
-@Entity
-public class User {
+@Entity //When you annotate a class with @Entity, you are essentially telling JPA that instances of this class should be persisted to a relational database as rows in a corresponding database table.
+public class User { //the @Entity annotation is used to indicate that a Java class is a JPA (Java Persistence API) entity.
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	@Id //The @Id annotation is used to indicate that a field within the entity class represents the primary key of the corresponding database table.
+	@GeneratedValue(strategy = GenerationType.AUTO) //The @GeneratedValue annotation is used to specify how the primary key values for entities should be generated.
+	private int id; //strategy = GenerationType.AUTO indicates that the generation strategy for primary key values should be determined by the underlying database or JPA provider. The JPA provider will choose an appropriate strategy based on the database it's connected to.
 	
 	private String name;
 	
