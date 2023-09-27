@@ -125,6 +125,7 @@ public class Main  {
 		//12.
 		System.out.println(getFirstOddUsingSet());
 		//so this is how you result depends upon the type of DS you use.
+		//when you use sequential it takes more time, and when you use parallel it takes less time coz it runs parallerly.
 	}
 }
 
