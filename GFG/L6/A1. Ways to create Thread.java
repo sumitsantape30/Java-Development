@@ -36,7 +36,7 @@ public class Main  {
 		//another way is by extending Runnable
 		//why do we see two methods?
 		// suppose  myThread class is already extending Person class then it wont be able to extend Thread coz in java multiple inheritance is not possible. then we can implement Runnable.
-		
+		//you can use Runnable anytime but you can use Thread class only if current class is not extending any other class.
 		
 	}
 	
