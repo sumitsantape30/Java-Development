@@ -31,6 +31,8 @@ public class Main  {
 		//we need to pass identity in reduce() function: just like we initiaise sum=0; before adding element to this sum that's identity. when you're multiplying you define with 1
 		System.out.println(ans);
 		//stream is basically converting your dataset into pipeline
+		//reduce: reduce is a method available on collections in Java, such as Lists, that allows you to reduce the elements of the collection to a single result.
+		//It takes a binary operator as its argument, which specifies how the elements should be combined.
 	}
 	
 	public static void main(String[] args) {
