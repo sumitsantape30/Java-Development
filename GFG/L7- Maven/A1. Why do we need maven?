@@ -96,5 +96,7 @@ Artifact If: jeera, bitbucket.
 The combination of Groupid and artifactid is called archetype.
 this combination makes the project unique across the world.
 
+Package Name= Group id
+class Name = Artifact id
 
 
