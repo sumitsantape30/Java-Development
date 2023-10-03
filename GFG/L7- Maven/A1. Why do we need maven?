@@ -24,8 +24,63 @@ right building (receiver's device), and the room number tells you exactly which 
 deliver the mail to. Together, they form the complete address on the receiver's side, ensuring that data reaches the intended destination
 within the device.
 
+Every system runs on a host and port.
 ==========================================================================================================================================
 
+Why do we need maven.
+
+when we need to connect to database we need to tell where this mySQl server is running.
+
+//we need 5 things to create the connection: 1. Host, 2. Port, 3. Username, 4. Password, 5. Which DB to connect.
+Once we are connected to the database we can perform the various operations.
+
+Jar: Java Archives
+rt.jar: it has files and folders
+
+whats the use of maven when we have ANT ?
+
+ChatGPT:
+
+Apache Maven and Apache Ant are both build automation tools used in software development, but they have some key differences in 
+their approach and use cases:
+
+Apache Maven:
+
+Convention over Configuration: Maven follows a convention-based approach. It enforces a specific project structure and naming 
+conventions, which can make it easier for developers to understand and work on projects, especially when they switch between 
+different projects.
+
+Dependency Management: Maven has built-in dependency management. It can automatically download and manage project 
+dependencies (libraries, frameworks, etc.) from a central repository, simplifying the management of external dependencies.
+
+Lifecycle Management: Maven defines a standard build lifecycle with phases like compile, test, package, and deploy. 
+Developers can simply execute goals (e.g., mvn clean install) to perform common build tasks. This standardized build process helps 
+maintain consistency across projects.
+
+Plugins: Maven uses plugins to extend its functionality. There are many plugins available for various tasks, such as compiling code, 
+running tests, generating documentation, and packaging applications.
+
+POM (Project Object Model): Maven projects are configured using a POM XML file. This POM file defines project details, dependencies, 
+plugins, and the build lifecycle. It serves as a central configuration file.
+
+Apache Ant:
+
+Procedural Scripting: Ant uses XML-based build scripts that allow developers to specify a sequence of tasks using a procedural approach. 
+It provides more flexibility in defining custom build processes.
+
+No Conventions: Ant does not enforce any specific project structure or naming conventions. Developers have more control over the build
+process and can adapt it to their project's needs.
+
+Lack of Dependency Management: Unlike Maven, Ant does not have built-in dependency management. Developers need to manage dependencies 
+manually, which can be more error-prone and time-consuming for larger projects.
+
+Customization: Ant is highly customizable. Developers can create custom tasks and scripts tailored to their project's unique requirements.
+
+In summary, Maven and Ant serve similar purposes in automating the build process, but they have different philosophies and strengths.
+Maven is often preferred for projects that follow standard conventions and require strong dependency management, while Ant is more 
+suitable for projects that require a high degree of customization and flexibility in their build process. 
+The choice between Maven and Ant depends on the specific needs and preferences of a development team and the nature of the project 
+being undertaken. Some projects even use both tools together to combine their strengths.
 
 
 
