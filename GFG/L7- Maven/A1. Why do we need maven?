@@ -1,0 +1,36 @@
+1. In general Java program runs in ANT. (its like Maven)
+
+/////////////////////////// Host and Port ///////////////////////////////////
+
+Host- Is is an IP address.
+
+Host: A host is like a home address for a computer or a device on a network. It's a unique identifier that tells other devices 
+where to find and communicate with it. Just like you have a home address to receive mail, a computer or server has a host address 
+to receive data and requests from other computers over a network.
+
+Port: Think of a port as a specific entrance or door at a host's address. It's a way to differentiate between different services 
+or applications running on the same computer. Imagine a big building (the host), and each office or room (the port) has a different 
+purpose or service. Ports help direct incoming data to the right place within a host.
+
+When you combine a host and a port, you can specify exactly where you want to send data on a network. This is essential for computers 
+and devices to communicate effectively, as it helps them know both where to send data and which service or application to use on the 
+target machine.
+
+When you combine a host and a port, you create a specific address on the receiver's side. This address tells other devices on the 
+network where to send data and which service or application to use on the receiver's machine.
+
+Think of it like a street address (the host) and a room number (the port) in a building. The street address gets the mail to the 
+right building (receiver's device), and the room number tells you exactly which room (service or application) within that building to 
+deliver the mail to. Together, they form the complete address on the receiver's side, ensuring that data reaches the intended destination
+within the device.
+
+==========================================================================================================================================
+
+
+
+
+
+
+
+
+
