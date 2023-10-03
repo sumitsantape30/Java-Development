@@ -83,9 +83,18 @@ The choice between Maven and Ant depends on the specific needs and preferences o
 being undertaken. Some projects even use both tools together to combine their strengths.
 
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+When i create a maven project i need to mention 3 things.
+1. Group Id: Group id is entity or organisation that is developing this project.
+2. artifact id: it is a unique identifier for a specific project.
+3. Version : it is the version of project. If you make changes in project your version will be updated.
 
+GroupdId: org.atlassion (who is creating the project)
+Artifact If: jeera, bitbucket.
 
+The combination of Groupid and artifactid is called archetype.
+this combination makes the project unique across the world.
 
 
 
