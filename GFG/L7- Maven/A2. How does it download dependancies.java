@@ -22,3 +22,12 @@ Q. If dependancies for one project are already downloaded will it download again
      p2 -> ~/.m2
      p3 -> ~/.m2 
   the local repo of these 3 projects are same. if required jar files are already downloaded previously it wont download them again.
+  
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  Snapashot Version: The project which are in progress are called as snapshot.
+  1.1 (kind of versions): Project is in stable state.
+
+  :if spring boot project has version 3.5.1-snapshot I shouldnt use this, this project might have some bugs/issues. i should use 3.4.0 kind of version.
+  : snapshot generally refers to the current project version we are working on.
+  :2.4- snapshot is version we're working on, after development it'll become 2.4 which is stable version.
