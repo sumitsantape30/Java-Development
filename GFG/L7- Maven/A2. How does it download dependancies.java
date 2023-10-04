@@ -31,3 +31,5 @@ Q. If dependancies for one project are already downloaded will it download again
   :if spring boot project has version 3.5.1-snapshot I shouldnt use this, this project might have some bugs/issues. i should use 3.4.0 kind of version.
   : snapshot generally refers to the current project version we are working on.
   :2.4- snapshot is version we're working on, after development it'll become 2.4 which is stable version.
+  : if you're working on development then your version will be called 2.4-snapshot and when its deployed it'll be called 2.4 (stable). and again when you start working on same project for additional requirments it'll be called as 2.5 snapshot, and it'll be deployed it;ll be called as 2.5.
+     so snapshot version is one which we are currently working on.
