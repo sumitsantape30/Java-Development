@@ -1,0 +1,16 @@
+API: Application Programming Interface.
+
+A way to communicate with other entities it can be frontend or other backend server.
+
+API : {
+
+  URL Path:
+  Req parameter:
+  Req Body:
+  Type of Operation:
+
+}
+
+This template is a structured way to document the key details of an API endpoint, making it easier for developers to 
+understand how to interact with the API by providing information about its URL, required parameters, request body, and the type of 
+operation it supports.
