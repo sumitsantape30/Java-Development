@@ -16,8 +16,23 @@ Standalone Application:
 
 A standalone application is a software program that is designed to run on a single device or computer. It typically doesn't require continuous internet connectivity or external resources while it's running.
 Standalone applications are often used for tasks that can be completed in a single session and don't need to run indefinitely. For example, word processors, video games, and image editors are often standalone applications.
+
 Server Application:
 
 A server application, often referred to as a server, is software that runs continuously on a server computer and responds to client requests over a network, typically the internet. Servers are designed to provide services or data to other devices or clients.
 Server applications are expected to run for extended periods, often indefinitely, and they are responsible for handling incoming requests and providing responses as needed. Examples include web servers, email servers, and database servers.
 Servers may or may not require internet connectivity, depending on their specific functionality. Some servers operate on closed networks, while others are accessible over the internet.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Inspect 
+
+Element: Show HTML part and how the UI looks like.
+Console: It's log for UI. If there's some issue in UI side, if some element fails to load or some exception in the frontend.
+Source: There will some call that frontend would be making to get the icons, images so to get the sources from some file system maybe.
+Network: This shows the response for every API call. It's use to see what response you're returning.
+Performance: To see if UI is loading fastly or not. or there's delay from the server.
+Memory: to see how much memory is taken by this website
+Application: frontend doesnt store data but some kind of data can be stored in frontend to improve on the performance. It also stores the id password of the user so that user doesnt need to login again and again coz frontend stores the cookies.
+Security: if some website has some certifications
+Lighthouse: It suggest optimisations for better performance.
