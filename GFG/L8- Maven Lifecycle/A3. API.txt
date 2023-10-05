@@ -10,6 +10,7 @@ API : {
   Type of Operation:
 
 }
+These things will be necessary to design and API.
 
 This template is a structured way to document the key details of an API endpoint, making it easier for developers to 
 understand how to interact with the API by providing information about its URL, required parameters, request body, and the type of 
