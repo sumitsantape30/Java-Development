@@ -1,0 +1,17 @@
+Spring-boot-starter
+    -Spring Boot
+      -Spring Core
+         - spring-jcl
+Spring boot starter depends on spring boot, spring boot depends on spring core so on.
+
+<Parent> tag in pom.xml has our parent which means keeping it as parent we have our own project. Every spring boot project will have spring-boot-starter-parent as a parent. It can have other name of the projects as well
+Ex. amazon has project amazon.spring.project and its parent is spring.main.project. Now they want to create a new project prime.video. Now it'll just mention amazon.spring.project as parent.
+
+and <properties> has version of java.
+<build> tag: it contains plugin, if you dont have any plugin it'll normally act like a maven project.
+
+      <plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+this plugin is telling maven that build this project as a spring-boot project.
