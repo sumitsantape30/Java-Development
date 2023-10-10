@@ -10,7 +10,7 @@ Ex. amazon has project amazon.spring.project and its parent is spring.main.proje
 and <properties> has version of java.
 <build> tag: it contains plugin, if you dont have any plugin it'll normally act like a maven project.
 
-      <plugin>
+     			 <plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
@@ -19,6 +19,7 @@ this plugin is telling maven that build this project as a spring-boot project.
 :By default my spring boot application runs on tomcat server.
  if i want to exclude the use of tomcat server from spring boot starter web i can do that using <exclusion>. Now my tomcat related dependencies will be gone. and my application wont act like a server, it'll stop after doing its tasks.
 : if i want to add another server like jetty, undertow i can add it too and jetty related dependencies will come.
+
 
 package com.jpa.test;
 
@@ -42,6 +43,7 @@ public class Bootdevtool1Application {
     //when you run your application now it'll run infinitely until you stop it manually.
 	
 }
+
 
 pom.xml
 
