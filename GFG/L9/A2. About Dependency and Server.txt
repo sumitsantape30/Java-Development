@@ -16,3 +16,89 @@ and <properties> has version of java.
 			</plugin>
 this plugin is telling maven that build this project as a spring-boot project.
 
+:By default my spring boot application runs on tomcat server.
+ if i want to exclude the use of tomcat server from spring boot starter web i can do that using <exclusion>. Now my tomcat related dependencies will be gone. and my application wont act like a server, it'll stop after doing its tasks.
+: if i want to add another server like jetty i can add it too and jetty related dependencies will come.
+
+package com.jpa.test;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Bootdevtool1Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Bootdevtool1Application.class, args);
+		System.out.println("Inside main method");
+		
+		System.out.println("Another line in main");
+	}
+	
+	//A server should run infinitely until some error occurs.
+	//we start this application and it stops after printing "Inside main method" so this is not acting like a server, its acting like a standalone application.
+	//spring-boot-starter this dependency does not have server related code that's why its not acting like a server.
+	//so when you add spring-boot-started-web dependency in your pom.xml in your code, this has code for embedded server. it'll start acting like a server means it'll run infinitely
+    //when you run your application now it'll run infinitely until you stop it manually.
+	
+}
+
+pom.xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.1.3</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.test</groupId>
+	<artifactId>bootdevtool-1</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>bootdevtool-1</name>
+	<description>This is a project just for learning purpose</description>
+	<properties>
+		<java.version>20</java.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<version>2.7.13</version>
+			<exclusions> //this his how we exclude the tomcat server
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-tomcat</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		//this is how we can add the jetty server
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jetty</artifactId>
+			<version>2.7.11</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
+
+
