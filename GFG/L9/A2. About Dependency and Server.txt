@@ -21,6 +21,8 @@ this plugin is telling maven that build this project as a spring-boot project.
  if i want to exclude the use of tomcat server from spring boot starter web i can do that using <exclusion>. Now my tomcat related dependencies will be gone. and my application wont act like a server, it'll stop after doing its tasks.
 : if i want to add another server like jetty, undertow i can add it too and jetty related dependencies will come.
 
+<scope>test</scope> means : the <scope> element in Maven dependency declarations defines when a dependency is available in the build lifecycle, not where it can be used within your project's directory structure.
+
 
 package com.jpa.test;
 
