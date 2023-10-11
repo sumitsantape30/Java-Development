@@ -1,0 +1,95 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+:: Spring Boot :: (v3.1.4)
+
+2023-10-11T15:41:30.135+05:30 INFO 17876 --- [restartedMain] com.sts.SampleDemo1Application : Starting SampleDemo1Application using Java 17.0.6 with PID 17876 (E:\Comding\Java Dev\sampleDemo1\target\classes started by HP in E:\Comding\Java Dev\sampleDemo1)
+2023-10-11T15:41:30.141+05:30 INFO 17876 --- [restartedMain] com.sts.SampleDemo1Application : No active profile set, falling back to 1 default profile: "default"
+2023-10-11T15:41:30.256+05:30 INFO 17876 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-10-11T15:41:30.256+05:30 INFO 17876 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-10-11T15:41:31.590+05:30 INFO 17876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 8080 (http)
+2023-10-11T15:41:31.605+05:30 INFO 17876 --- [restartedMain] o.apache.catalina.core.StandardService : Starting service [Tomcat]
+2023-10-11T15:41:31.606+05:30 INFO 17876 --- [restartedMain] o.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/10.1.13]
+2023-10-11T15:41:31.712+05:30 INFO 17876 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2023-10-11T15:41:31.714+05:30 INFO 17876 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1456 ms
+2023-10-11T15:41:32.209+05:30 INFO 17876 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer : LiveReload server is running on port 35729
+2023-10-11T15:41:32.278+05:30 INFO 17876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer : Tomcat started on port(s): 8080 (http) with context path ''
+2023-10-11T15:41:32.298+05:30 INFO 17876 --- [restartedMain] com.sts.SampleDemo1Application : Started SampleDemo1Application in 2.698 seconds (process running for 3.982)
+inside main
+2023-10-11T15:41:46.689+05:30 INFO 17876 --- [on(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-10-11T15:41:46.713+05:30 INFO 17876 --- [on(2)-127.0.0.1] o.apache.catalina.core.StandardService : Stopping service [Tomcat]
+
+Analysis:
+2023-10-11T15:41:30.135+05:30 = This is date
+INFO = this is log
+17876 = This is PID (Process ID) Read first line it says application started with PID 17876
+[restartedMain] = This is the thread in which this code is running.
+com.sts.SampleDemo1Application = This is class name in which this log is printed.
+
+
+=========================== How to print simple sysout statement in logging format =========================
+
+package com.sts;
+
+
+import org.slf4j.LoggerFactory;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import ch.qos.logback.classic.Logger;
+
+@SpringBootApplication
+public class SampleDemo1Application {
+	
+	//2.
+	private static org.slf4j.Logger logger = LoggerFactory.getLogger(SampleDemo1Application.class);
+
+	public static void main(String[] args) {
+		SpringApplication.run(SampleDemo1Application.class, args);
+		System.out.println("inside main");
+		System.out.println("inside main2");
+		
+		//1. above two lines are simple sysout statements, they are not printed in logging format. They are printed as it is, you can see in output
+		//It doesnt give you additional info like in which thread it was run like other logs
+	   // I'm not getting additional information to make this statement act like a log i use the logger
+	
+		//3.
+		logger.info("inside main");
+		logger.info("inside main2");
+		
+		//This helps you debug when you dont have idea about its class, thread etc.
+	
+	} 
+
+}
+
+Output:
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+[32m :: Spring Boot :: [39m              [2m (v3.1.4)[0;39m
+
+[2m2023-10-11T16:18:20.431+05:30[0;39m [32m INFO[0;39m [35m11492[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mcom.sts.SampleDemo1Application          [0;39m [2m:[0;39m Starting SampleDemo1Application using Java 17.0.6 with PID 11492 (E:\Comding\Java Dev\sampleDemo1\target\classes started by HP in E:\Comding\Java Dev\sampleDemo1)
+[2m2023-10-11T16:18:20.437+05:30[0;39m [32m INFO[0;39m [35m11492[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mcom.sts.SampleDemo1Application          [0;39m [2m:[0;39m No active profile set, falling back to 1 default profile: "default"
+[2m2023-10-11T16:18:20.544+05:30[0;39m [32m INFO[0;39m [35m11492[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [2m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2m2023-10-11T16:18:20.545+05:30[0;39m [32m INFO[0;39m [35m11492[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [2m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2m2023-10-11T16:18:21.779+05:30[0;39m [32m INFO[0;39m [35m11492[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat initialized with port(s): 8080 (http)
+[2m2023-10-11T16:18:21.794+05:30[0;39m [32m INFO[0;39m [35m11492[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.apache.catalina.core.StandardService  [0;39m [2m:[0;39m Starting service [Tomcat]
+[2m2023-10-11T16:18:21.794+05:30[0;39m [32m INFO[0;39m [35m11492[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.apache.catalina.core.StandardEngine   [0;39m [2m:[0;39m Starting Servlet engine: [Apache Tomcat/10.1.13]
+[2m2023-10-11T16:18:21.890+05:30[0;39m [32m INFO[0;39m [35m11492[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/]      [0;39m [2m:[0;39m Initializing Spring embedded WebApplicationContext
+[2m2023-10-11T16:18:21.892+05:30[0;39m [32m INFO[0;39m [35m11492[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mw.s.c.ServletWebServerApplicationContext[0;39m [2m:[0;39m Root WebApplicationContext: initialization completed in 1345 ms
+[2m2023-10-11T16:18:22.409+05:30[0;39m [32m INFO[0;39m [35m11492[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.d.a.OptionalLiveReloadServer      [0;39m [2m:[0;39m LiveReload server is running on port 35729
+[2m2023-10-11T16:18:22.467+05:30[0;39m [32m INFO[0;39m [35m11492[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat started on port(s): 8080 (http) with context path ''
+[2m2023-10-11T16:18:22.484+05:30[0;39m [32m INFO[0;39m [35m11492[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mcom.sts.SampleDemo1Application          [0;39m [2m:[0;39m Started SampleDemo1Application in 2.564 seconds (process running for 3.609)
+inside main
+inside main2
+[2m2023-10-11T16:18:22.489+05:30[0;39m [32m INFO[0;39m [35m11492[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mcom.sts.SampleDemo1Application          [0;39m [2m:[0;39m inside main
+[2m2023-10-11T16:18:22.489+05:30[0;39m [32m INFO[0;39m [35m11492[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mcom.sts.SampleDemo1Application          [0;39m [2m:[0;39m inside main2
