@@ -1,5 +1,6 @@
 package com.sts;
 
+//B
 public class Person {
 	
 	private int id;
