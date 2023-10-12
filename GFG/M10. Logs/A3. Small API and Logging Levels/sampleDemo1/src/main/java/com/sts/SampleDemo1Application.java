@@ -14,7 +14,8 @@ public class SampleDemo1Application {
 		SpringApplication.run(SampleDemo1Application.class, args);
 		System.out.println("inside main");
 		System.out.println("inside main2");
-		
+
+		//c
 		//all these logs comes from slf4j library, we cant add our custom log in it. you cant add more levels to it coz its spring boot library
 		logger.info("inside main");
 		logger.info("inside main2");
