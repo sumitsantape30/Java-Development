@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+//A
 @RestController //this is making this api visible to the embedded server so that it can route to an appropriate function
 public class SampleController {
 	//This is an simple file which will become an entry point for any request coming on my server.
