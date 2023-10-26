@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.slf4j.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 @Configuration //6. now we'll run this app in logging.root.level =deubg
 public class demoConfig {
@@ -16,6 +17,7 @@ public class demoConfig {
 	private org.slf4j.Logger logger = LoggerFactory.getLogger(demoConfig.class);
 	
 	@Bean //this function is invoked on application startup, bean is addded to the top of function which is returing some object.
+	@Scope("singleton")
 	public RestTemplate getTemplate() {
 		RestTemplate restemplate= new RestTemplate();
 		logger.info("Inside getTemplate Object: "+ restemplate);
@@ -31,9 +33,10 @@ public class demoConfig {
 	 * 
 	 */
 	
-	/*8. we can also name this bean as @Bean("Template")
+	/*8. we can also name this bean as @Bean(name= "Template")
 	 * tabbhi autowiring mai koi problem nhi hogi kyuki autowiring object type se hoti hai
-	 * RestTemplate restTemplate, isme variable ko nam kuch bhi de skte ho
+	 * RestTemplate restTemplate, isme variable ko nam kuch bhi de skte ho.
+	 * and for use of  @Scope("prototype") open DemoController2.
 	 */
 
 }

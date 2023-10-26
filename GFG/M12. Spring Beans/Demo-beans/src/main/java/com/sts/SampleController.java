@@ -23,6 +23,11 @@ public class SampleController {
 	
 	org.slf4j.Logger logger=  LoggerFactory.getLogger(SampleController.class);
 	
+//  @Autowired
+////@Qualifier("template") // use this only when there are more than 1 bean of type restTemplate
+//RestTemplate restTemplate;
+
+	
 	@GetMapping("/test")
 	public String sayHello() {
 		RestTemplate restTemplate = democonfig.getTemplate();
