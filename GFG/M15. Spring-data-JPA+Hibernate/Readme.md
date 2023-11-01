@@ -14,6 +14,6 @@ Problems with ORM
  
  then Fameworks like eclipselink, hibernate, Open JPA, rowmapper comes into picture.
  Hibernate is a framework which we use to do ORM and JPA is spring related abstraction.
- so when we say we'll intergrate hibernate and jpa, jpa is basically an abstraction which is use to connect to hiberante to do above all the ORM.
+ so when we say we'll intergrate hibernate and jpa, jpa is basically an abstraction which is use to connect to hiberante to do above all the ORM. <br>
  ORM: ORM is mapping our object of entity like Employee with the database.(relational database)
  
