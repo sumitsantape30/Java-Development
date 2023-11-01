@@ -9,7 +9,7 @@ Problems with ORM
  Here you're doing Object Relation Mapping(ORM), there are lot of framework which does this task for us.
  
  3. Scalability: right now I had only 5 attributes so i was able to do getId() and then map it to Id, getAge() and then map it to age etc.
-  what if i had 50 attributes.
+  what if i had 50 attributes. you wont be able to map 50 attirbutes with 50 columns.
  4. Optimization: you dont have guarantee that sql query you have written is most optimized.
  
  then Fameworks like eclipselink, hibernate, Open JPA, rowmapper comes into picture.
