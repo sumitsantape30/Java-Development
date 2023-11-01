@@ -16,7 +16,7 @@ Problems with ORM
  Hibernate is a framework which we use to do ORM and JPA is spring related abstraction.
  so when we say we'll intergrate hibernate and jpa, jpa is basically an abstraction which is use to connect to hiberante to do above all the ORM.
  <br>
- Just getting the connection from the drivermanager and writing queries ourselves wont help use scale the application.
+ Just getting the connection from the drivermanager and writing queries ourselves wont help us scale the application.
  <br>
  ORM: ORM is mapping our object of entity like Employee with the database.(relational database)
  
